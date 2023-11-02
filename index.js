@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   liff
     .init({ liffId: process.env.LIFF_ID })
     .then(() => {
+      console.log('LIFF_OK')
       const api_url = `https://script.google.com/macros/s/${process.env.DEP_ID}/exec`;
 
       // スプレッドシートのシート１の情報全取得
@@ -62,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
     })
     .catch((error) => {
-        console.log(error)
+        console.log('NG');
+        console.log(error);
     }
     )
 });
